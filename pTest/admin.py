@@ -1,5 +1,4 @@
 from django.contrib import admin
-from pTest.models import Category, Page
+from pTest.models import News
 
-admin.site.register(Category)
-admin.site.register(Page)
+admin.site.register(News)

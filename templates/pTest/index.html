@@ -1,19 +1,36 @@
 <!DOCTYPE html>
+
 <html>
 
-    <head>
-        <title>Practical Test</title>
-    </head>
+<head>
+    <title>Practical Test</title>
+    <style>
+        body {
+            background-color: #ffff00;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
 
-    <body>
-        <h1>pTest says...</h1>
-        <div>
-            Online!<br />
-            <strong>{{ boldmessage }}</strong><br />
-        </div>
+<body>
+    <h1>School News</h1>
+    <div>
+        {% if newsList %}
+            {% for news in newsList %}
+            <h2>{{news.newsTitle}}</h2>
+            <p>
+                <i>by {{news.newsAuthor}}. {{news.newsDate}}</i>
+            </p>
+            <p>
+                {{news.newsDescription}}
+            </p>
+            {% endfor %}
+            {% else %}
+            <strong>No news to display.</strong>
+            {% endif %}
+    </div>
+</body>
 
-        <div>
-            <a href="/pTest/about/">About</a><br />
-        </div>
-    </body>
 </html>
